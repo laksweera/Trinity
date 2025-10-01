@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Idea Board
 
-## Getting Started
+A simple idea board app built with Next.js + TypeScript + Prisma + PostgreSQL.
 
-First, run the development server:
+🚀 How to Run
+1. Install dependencies
+npm install
 
-```bash
+2. Setup database
+
+Create a file .env in the project root:
+
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/idea_board"
+
+
+(make sure you have PostgreSQL running)
+
+3. Setup Prisma
+npx prisma generate
+npx prisma migrate dev --name init
+
+4. Run the app
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Landing page → http://localhost:3000
 
-## Learn More
+Idea board → http://localhost:3000/app
 
-To learn more about Next.js, take a look at the following resources:
+✅ Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Submit ideas (max 280 chars)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Upvote ideas
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Data saved in PostgreSQL
